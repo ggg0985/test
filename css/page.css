@@ -1,0 +1,284 @@
+/* css/page.css */
+
+/* --- 공통 기본 디자인 설정 --- */
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #1a1a1a; /* bco_gray10 대용 기본 백그라운드 */
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    color: #e5b053; /* 고급스러운 골드 톤 */
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    font-size: 16px;
+    text-align: center;
+    color: #cccccc;
+    margin-bottom: 50px;
+}
+
+/* --- 공통 유틸리티 컬러 클래스 (HTML 매칭) --- */
+.co_white { color: #ffffff !important; }
+.co_gray0 { color: #f5f5f5 !important; }
+.co_gray1 { color: #cccccc !important; }
+.bco_gray10 { background-color: #121212 !important; }
+
+/* --- 버튼 스타일 --- */
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 5px;
+    margin: 10px 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.btn-primary { background-color: #e5b053; color: #000; font-weight: 700; }
+.btn-primary:hover { background-color: #cd993b; }
+.btn-secondary { background-color: transparent; color: #fff; border: 1px solid #ffffff; }
+.btn-secondary:hover { background-color: rgba(255, 255, 255, 0.1); }
+
+/* ----------------------------------
+ * 1. Hero Section (메인 대문)
+ * ---------------------------------- */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('../img/ogImage.jpg') no-repeat center center/cover;
+}
+.hero-section h1 { font-size: 42px; font-weight: 700; margin-bottom: 20px; }
+.hero-keywords {
+    max-width: 800px;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #666666;
+    line-height: 1.8;
+    word-break: keep-all;
+}
+
+/* ----------------------------------
+ * 2. Services Section (특별한 매입 서비스)
+ * ---------------------------------- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+.card {
+    background-color: #1f1f1f;
+    border: 1px solid #2d2d2d;
+    padding: 30px 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.card:hover { transform: translateY(-5px); border-color: #e5b053; }
+.card h3 { font-size: 18px; font-weight: 600; margin: 15px 0 10px 0; color: #f5f5f5; }
+.card p { font-size: 14px; color: #999999; }
+.card .icon { font-size: 32px; color: #e5b053; }
+
+/* ----------------------------------
+ * 3. Product Gallery (주요 매입 품목)
+ * ---------------------------------- */
+.filter-buttons { margin-bottom: 40px; }
+.btn-filter {
+    background: #252525;
+    color: #999;
+    border: 1px solid #333;
+    padding: 10px 22px;
+    margin: 5px;
+    border-radius: 30px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.btn-filter.active, .btn-filter:hover { background: #e5b053; color: #000; border-color: #e5b053; font-weight: 500; }
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+.product-item {
+    display: flex;
+    flex-direction: column;
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #2d2d2d;
+}
+.product-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    background-color: #2a2a2a;
+}
+.product-info { padding: 20px; text-align: center; }
+.product-info h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #fff; }
+.product-tags { font-size: 12px; color: #e5b053; }
+
+/* ----------------------------------
+ * 4. Liquor Types Grid (양주 카테고리 종류)
+ * ---------------------------------- */
+.liquor-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+.liquor-category { text-align: left !important; }
+.liquor-category ul { margin-top: 15px; }
+.liquor-category li {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 12px;
+}
+.liquor-category li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #e5b053;
+}
+
+/* ----------------------------------
+ * 5. Process Section (매입 프로세스)
+ * ---------------------------------- */
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    position: relative;
+}
+.process-step { text-align: center; padding: 20px; }
+.process-step .icon { font-size: 28px; color: #e5b053; font-weight: 700; margin-bottom: 10px; }
+.process-step h3 { font-size: 16px; font-weight: 600; margin-bottom: 10px; }
+.process-step p { font-size: 13px; color: #999; }
+
+/* ----------------------------------
+ * 6. Area, Why-us Grid (출장지역 및 차별성)
+ * ---------------------------------- */
+.area-grid, .why-us-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+/* ----------------------------------
+ * 7. Reviews (타임라인 후기)
+ * ---------------------------------- */
+.reviews-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.review-item {
+    background-color: #1f1f1f;
+    border-left: 4px solid #e5b053;
+    padding: 20px;
+    border-radius: 0 8px 8px 0;
+}
+.review-item h3 { font-size: 15px; font-weight: 600; color: #e5b053; margin-bottom: 5px; }
+.review-item p { font-size: 14px; color: #bbb; italic; }
+
+/* ----------------------------------
+ * 8. FAQ Accordion (자주 묻는 질문)
+ * ---------------------------------- */
+.faq-item {
+    max-width: 800px;
+    margin: 0 auto 15px auto;
+    background-color: #1f1f1f;
+    border-radius: 6px;
+    border: 1px solid #2d2d2d;
+    overflow: hidden;
+}
+.faq-question {
+    padding: 18px 20px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    transition: background-color 0.3s;
+}
+.faq-question:hover { background-color: #252525; }
+.faq-question::after { content: '▼'; font-size: 12px; color: #e5b053; transition: transform 0.3s; }
+.faq-item.active .faq-question::after { transform: rotate(180deg); }
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    transition: max-height 0.3s ease-out;
+    background-color: #181818;
+    color: #999;
+    font-size: 14px;
+}
+
+/* ----------------------------------
+ * 9. Contact Section & Footer
+ * ---------------------------------- */
+.contact-list {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+.contact-list li a {
+    display: flex;
+    align-items: center;
+    background: #252525;
+    padding: 25px 40px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    gap: 20px;
+    transition: border-color 0.3s;
+}
+.contact-list li a:hover { border-color: #e5b053; }
+.main-contact { font-size: 22px; font-weight: 700; color: #e5b053; margin: 4px 0; }
+
+.company-info-grid {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    background: #111;
+    padding: 30px;
+    border-radius: 8px;
+}
+.info-block { display: flex; align-items: center; gap: 15px; }
+
+.footer {
+    background-color: #0b0b0b;
+    padding: 50px 20px;
+    text-align: center;
+    font-size: 13px;
+    color: #555555;
+    border-top: 1px solid #222;
+}
+.footer p { margin-bottom: 8px; }
+.footer-keywords { margin-top: 20px; font-size: 12px; color: #333; }
+.footer-keywords span { margin: 0 5px; display: inline-block; }
